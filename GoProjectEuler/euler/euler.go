@@ -1,12 +1,29 @@
-package main
+package euler
 
 import (
+	"GoProjectEuler/goutils"
 	"fmt"
-	"goutils"
 )
 
-func main() {
-	fmt.Println("Hello World")
-	fmt.Println(goutils.IsDiv(9, 3))
-	fmt.Println(goutils.IsPrime(9))
+// RoutesFive returns a function
+func RoutesFive(s string, i int) {
+	switch s {
+	case "euler1":
+		fmt.Println(Euler1(i))
+	}
+}
+
+// Euler1 solution
+func Euler1(l int) int {
+	sum := 0
+	for i := 1; i < l; i++ {
+		if goutils.IsDiv(i, 3) || goutils.IsDiv(i, 5) {
+			sum += i
+		}
+	}
+	return sum
+}
+
+func euler2() {
+
 }

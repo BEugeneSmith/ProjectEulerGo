@@ -1,7 +1,7 @@
-package main
+package testgoutils
 
 import (
-	"goutils"
+	"GoProjectEuler/goutils"
 	"testing"
 )
 
