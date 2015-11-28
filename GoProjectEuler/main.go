@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"strconv"
@@ -17,6 +18,14 @@ func main() {
 		log.Fatal(err)
 	}
 
-	euler.RoutesFive(name, arg)
+	RoutesFive(name, arg)
 
+}
+
+// RoutesFive returns a function
+func RoutesFive(s string, i int) {
+	switch s {
+	case "euler1":
+		fmt.Println(euler.Euler1(i))
+	}
 }
