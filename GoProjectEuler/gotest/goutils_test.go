@@ -2,6 +2,7 @@ package testgoutils
 
 import (
 	"GoProjectEuler/goutils"
+	"reflect"
 	"testing"
 )
 
@@ -38,6 +39,7 @@ func TestIsPrime(t *testing.T) {
 	}
 
 	var tt = []IsPrimeTest{
+		{2, true},
 		{5, true},
 		{4, false},
 		{9, false},
@@ -91,6 +93,28 @@ func TestFibonacciLimit(t *testing.T) {
 		testExp := tt[i].expt
 
 		if testExp != lastTestIn {
+			t.Error("Test failed")
+		}
+	}
+}
+
+func TestGetFactors(t *testing.T) {
+	type FactorsTest struct {
+		test int   // input
+		expt []int // expected result
+	}
+
+	var tt = []FactorsTest{
+		{10, []int{2, 5}},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := goutils.GetFactors(tt[i].test)
+		testExp := tt[i].expt
+
+		if reflect.DeepEqual(testExp, testIn) {
+			t.SkipNow()
+		} else {
 			t.Error("Test failed")
 		}
 	}

@@ -15,12 +15,12 @@ func IsDiv(n, d int) bool {
 func IsPrime(n int) bool {
 	if n == 0 {
 		return false
-	} else if n < 2 {
+	} else if n <= 2 {
 		return true
 	} else if IsDiv(n, 2) {
 		return false
 	}
-	for i := 3; i < int(n/2); i += 2 {
+	for i := 3; i < int(n); i += 2 {
 		if IsDiv(n, i) {
 			return false
 		}
@@ -56,4 +56,27 @@ func FibonacciLimit(l int) []int {
 		ix2++
 	}
 	return seq[:len(seq)-1]
+}
+
+// GetFactors returns a list of a number's factors
+func GetFactors(n int) []int {
+	var factors []int
+	if IsDiv(n, 2) {
+		factors = append(factors, 2)
+		for i := 2; i <= (n / 2); i++ {
+			if IsDiv(n, i) {
+				factors = append(factors, i)
+			}
+		}
+		factors = factors[1:]
+
+	} else {
+		for i := 3; i <= (n / 2); i += 2 {
+			if IsDiv(n, i) {
+				factors = append(factors, i)
+			}
+		}
+	}
+
+	return factors
 }
