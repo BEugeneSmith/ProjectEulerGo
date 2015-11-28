@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// TestIsDiv tests the IsDiv function
 func TestIsDiv(t *testing.T) {
 	type IsDivTest struct {
 		test [2]int // input
@@ -29,6 +30,7 @@ func TestIsDiv(t *testing.T) {
 	}
 }
 
+// TestIsPrime tests the IsPrime function
 func TestIsPrime(t *testing.T) {
 	type IsPrimeTest struct {
 		test int  // input
