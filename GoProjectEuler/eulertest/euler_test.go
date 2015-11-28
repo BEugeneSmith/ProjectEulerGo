@@ -26,3 +26,23 @@ func TestEuler1(t *testing.T) {
 		}
 	}
 }
+
+func TestEuler2(t *testing.T) {
+	type Euler2Test struct {
+		test int // input
+		expt int // expected result
+	}
+
+	var tt = []Euler2Test{
+		{10, 10},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := euler.Euler2(tt[i].test)
+		testExp := tt[i].expt
+
+		if testExp != testIn {
+			t.Error("Test failed")
+		}
+	}
+}
