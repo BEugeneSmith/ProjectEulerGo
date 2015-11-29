@@ -2,7 +2,6 @@ package testgoutils
 
 import (
 	"GoProjectEuler/goutils"
-	"reflect"
 	"testing"
 )
 
@@ -26,7 +25,7 @@ func TestIsDiv(t *testing.T) {
 		testExp := tt[i].expt
 
 		if testIn != testExp {
-			t.Error("Test failed")
+			t.Error("IsDiv test failed")
 		}
 	}
 }
@@ -50,76 +49,12 @@ func TestIsPrime(t *testing.T) {
 		testExp := tt[i].expt
 
 		if testExp != testIn {
-			t.Error("Test failed")
+			t.Error("IsPrime test failed")
 		}
 	}
 }
 
-func TestFibonacciNumber(t *testing.T) {
-	type FibonacciTest struct {
-		test int // input
-		expt int // expected result
-	}
-
-	var tt = []FibonacciTest{
-		{3, 2},
-		{10, 55},
-	}
-
-	for i := 0; i < len(tt); i++ {
-		testInIndex := tt[i].test - 1
-		testIn := goutils.FibonacciNumber(tt[i].test)[testInIndex]
-		testExp := tt[i].expt
-
-		if testExp != testIn {
-			t.Error("Test failed")
-		}
-	}
-}
-
-func TestFibonacciLimit(t *testing.T) {
-	type FibonacciTest struct {
-		test int // input
-		expt int // expected result
-	}
-
-	var tt = []FibonacciTest{
-		{10, 8},
-	}
-
-	for i := 0; i < len(tt); i++ {
-		testIn := goutils.FibonacciLimit(tt[i].test)
-		lastTestIn := testIn[len(testIn)-1]
-		testExp := tt[i].expt
-
-		if testExp != lastTestIn {
-			t.Error("Test failed")
-		}
-	}
-}
-
-func TestGetFactors(t *testing.T) {
-	type FactorsTest struct {
-		test int   // input
-		expt []int // expected result
-	}
-
-	var tt = []FactorsTest{
-		{10, []int{2, 5}},
-	}
-
-	for i := 0; i < len(tt); i++ {
-		testIn := goutils.GetFactors(tt[i].test)
-		testExp := tt[i].expt
-
-		if reflect.DeepEqual(testExp, testIn) {
-			t.SkipNow()
-		} else {
-			t.Error("Test failed")
-		}
-	}
-}
-
+// TestIsPalindrome tests IsPalindrome
 func TestIsPalindrome(t *testing.T) {
 	type IsPalindromeTest struct {
 		test string
@@ -138,7 +73,7 @@ func TestIsPalindrome(t *testing.T) {
 		testExp := tt[i].expt
 
 		if testIn != testExp {
-			t.Error("Test Failed")
+			t.Error("IsPalindrome test failed")
 		}
 	}
 }

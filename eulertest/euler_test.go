@@ -23,7 +23,7 @@ func TestEuler1(t *testing.T) {
 		testExp := tt[i].expt
 
 		if testExp != testIn {
-			t.Error("Test failed")
+			t.Error("Euler 1 failed")
 		}
 	}
 }
@@ -43,7 +43,7 @@ func TestEuler2(t *testing.T) {
 		testExp := tt[i].expt
 
 		if testExp != testIn {
-			t.Error("Test failed")
+			t.Error("Euler 2 failed")
 		}
 	}
 }
@@ -65,7 +65,7 @@ func TestEuler3(t *testing.T) {
 		if reflect.DeepEqual(testExp, testIn) {
 			t.SkipNow()
 		} else {
-			t.Error("Test failed")
+			t.Error("Euler 3 failed")
 		}
 	}
 }
@@ -85,8 +85,8 @@ func TestEuler4(t *testing.T) {
 		testIn := euler.Euler4(tt[i].test)
 		testExp := tt[i].expt
 
-		if reflect.DeepEqual(testExp, testIn) {
-			t.Error("Test failed")
+		if testIn != testExp {
+			t.Error("Euler 4 failed")
 		}
 	}
 }

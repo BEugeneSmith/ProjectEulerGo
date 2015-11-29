@@ -1,0 +1,20 @@
+package goutils
+
+// ReverseString reverses a string
+func ReverseString(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
+// ReverseIntArray reverses an array of integers
+func ReverseIntArray(ia []int) []int {
+
+	for i, j := 0, len(ia)-1; i < j; i, j = i+1, j-1 {
+		ia[i], ia[j] = ia[j], ia[i]
+	}
+
+	return ia
+}
