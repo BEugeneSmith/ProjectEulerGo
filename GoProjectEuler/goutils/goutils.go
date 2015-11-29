@@ -28,6 +28,19 @@ func IsPrime(n int) bool {
 	return true
 }
 
+// IsPalindrome tests if a string is palindromic
+func IsPalindrome(s string) bool {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+
+	if s == string(runes) {
+		return true
+	}
+	return false
+}
+
 // FibonacciNumber returns a fibonacci sequence up to the lth element
 func FibonacciNumber(l int) []int {
 	seq := []int{1, 1}

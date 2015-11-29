@@ -119,3 +119,26 @@ func TestGetFactors(t *testing.T) {
 		}
 	}
 }
+
+func TestIsPalindrome(t *testing.T) {
+	type IsPalindromeTest struct {
+		test string
+		expt bool
+	}
+
+	var tt = []IsPalindromeTest{
+		{"me", false},
+		{"bob", true},
+		{"90", false},
+		{"909", true},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := goutils.IsPalindrome(tt[i].test)
+		testExp := tt[i].expt
+
+		if testIn != testExp {
+			t.Error("Test Failed")
+		}
+	}
+}

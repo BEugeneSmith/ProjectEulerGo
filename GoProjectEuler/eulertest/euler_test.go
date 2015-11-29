@@ -69,3 +69,24 @@ func TestEuler3(t *testing.T) {
 		}
 	}
 }
+
+func TestEuler4(t *testing.T) {
+	type Euler4Test struct {
+		test int    // input
+		expt string // expected result
+	}
+
+	var tt = []Euler4Test{
+		{3, "99,91"},
+		{4, "995,583"},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := euler.Euler4(tt[i].test)
+		testExp := tt[i].expt
+
+		if reflect.DeepEqual(testExp, testIn) {
+			t.Error("Test failed")
+		}
+	}
+}
