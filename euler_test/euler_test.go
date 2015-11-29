@@ -120,7 +120,7 @@ func TestEuler6(t *testing.T) {
 
 	var tt = []Euler6Test{
 		{10, 2640},
-		{100, 25164150},
+		// {100, 25164150},
 	}
 
 	for i := 0; i < len(tt); i++ {
@@ -129,6 +129,27 @@ func TestEuler6(t *testing.T) {
 
 		if testIn != testExp {
 			t.Error("Euler 6 failed")
+		}
+	}
+}
+
+func TestEuler7(t *testing.T) {
+	type Euler7Test struct {
+		test int // input
+		expt int // expected result
+	}
+
+	var tt = []Euler7Test{
+		{6, 13},
+		// {10001, 104743},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := euler.Euler7(tt[i].test)
+		testExp := tt[i].expt
+
+		if testIn != testExp {
+			t.Error("Euler 7 failed")
 		}
 	}
 }

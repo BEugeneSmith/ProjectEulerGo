@@ -37,5 +37,7 @@ func RoutesFive(s string, i int) {
 		fmt.Println(euler.Euler5(i))
 	case "euler6":
 		fmt.Println(euler.Euler6(i))
+	case "euler7":
+		fmt.Println(euler.Euler7(i))
 	}
 }

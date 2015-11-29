@@ -32,6 +32,17 @@ func FibonacciLimit(l int) []int {
 	return seq[:len(seq)-1]
 }
 
+// PrimeNumber returns a prime sequence up to the lth element
+func PrimeNumber(l int) []int {
+	seq := []int{2}
+	for i := 3; len(seq) < l; i += 2 {
+		if IsPrime(i) {
+			seq = append(seq, i)
+		}
+	}
+	return seq
+}
+
 // SumSquare calculates the sum of squares for the first n natural numbers
 func SumSquare(n int) int {
 	var sum int

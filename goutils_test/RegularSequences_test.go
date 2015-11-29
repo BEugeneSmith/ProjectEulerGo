@@ -93,3 +93,23 @@ func TestSquareSum(t *testing.T) {
 		}
 	}
 }
+
+func TestPrimeNumber(t *testing.T) {
+	type PrimeNumberTest struct {
+		test int   // input
+		expt []int // expected result
+	}
+
+	var tt = []PrimeNumberTest{
+		{6, []int{2, 3, 5, 7, 11, 13}},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := goutils.PrimeNumber(tt[i].test)
+		testExp := tt[i].expt
+
+		if goutils.ArrayEqual(testExp, testIn) == false {
+			t.Error("PrimeNumber test failed")
+		}
+	}
+}
