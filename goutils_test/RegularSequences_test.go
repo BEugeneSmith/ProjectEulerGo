@@ -51,3 +51,45 @@ func TestFibonacciLimit(t *testing.T) {
 		}
 	}
 }
+
+// TestSumSquare tests SumSquare
+func TestSumSquare(t *testing.T) {
+	type SumSquareTest struct {
+		test int // input
+		expt int // expected result
+	}
+
+	var tt = []SumSquareTest{
+		{10, 385},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := goutils.SumSquare(tt[i].test)
+		testExp := tt[i].expt
+
+		if testExp != testIn {
+			t.Error("SumSquare test failed")
+		}
+	}
+}
+
+// TestSquareSum tests SquareSum
+func TestSquareSum(t *testing.T) {
+	type SquareSumTest struct {
+		test int // input
+		expt int // expected result
+	}
+
+	var tt = []SquareSumTest{
+		{10, 3025},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := goutils.SquareSum(tt[i].test)
+		testExp := tt[i].expt
+
+		if testExp != testIn {
+			t.Error("SquareSum test failed")
+		}
+	}
+}
