@@ -90,3 +90,24 @@ func TestEuler4(t *testing.T) {
 		}
 	}
 }
+
+func TestEuler5(t *testing.T) {
+	type Euler5Test struct {
+		test int // input
+		expt int // expected result
+	}
+
+	var tt = []Euler5Test{
+		{10, 2520},
+		{6, 60},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := euler.Euler5(tt[i].test)
+		testExp := tt[i].expt
+
+		if testIn != testExp {
+			t.Error("Euler 5 failed")
+		}
+	}
+}
