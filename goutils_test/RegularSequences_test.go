@@ -113,3 +113,24 @@ func TestPrimeNumber(t *testing.T) {
 		}
 	}
 }
+
+func TestPrimeLimit(t *testing.T) {
+	type PrimeLimitTest struct {
+		test int   // input
+		expt []int // expected result
+	}
+
+	var tt = []PrimeLimitTest{
+		{20, []int{2, 3, 5, 7, 11, 13, 17, 19}},
+		{10, []int{2, 3, 5, 7}},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := goutils.PrimeLimit(tt[i].test)
+		testExp := tt[i].expt
+
+		if goutils.ArrayEqual(testExp, testIn) == false {
+			t.Error("PrimeLimit test failed")
+		}
+	}
+}

@@ -72,3 +72,13 @@ func Euler9(n int) string {
 	}
 	return allstrings[len(allstrings)-1]
 }
+
+// Euler10 solution
+func Euler10(n int) int {
+	set := goutils.PrimeLimit(n)
+	sum := 0
+	for i := 0; i < len(set); i++ {
+		sum += set[i]
+	}
+	return sum
+}

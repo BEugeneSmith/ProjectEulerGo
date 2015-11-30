@@ -43,6 +43,19 @@ func PrimeNumber(l int) []int {
 	return seq
 }
 
+// PrimeLimit returns a prime sequence up to the lth element
+func PrimeLimit(l int) []int {
+	seq := []int{2}
+
+	for i := 3; seq[(len(seq)-1)] < l; i += 2 {
+		if IsPrime(i) {
+			seq = append(seq, i)
+		}
+	}
+
+	return seq[:(len(seq) - 1)]
+}
+
 // SumSquare calculates the sum of squares for the first n natural numbers
 func SumSquare(n int) int {
 	var sum int
