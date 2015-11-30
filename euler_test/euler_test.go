@@ -2,7 +2,7 @@ package testeuler
 
 import (
 	"GoProjectEuler/euler"
-	"reflect"
+	"GoProjectEuler/goutils"
 	"testing"
 )
 
@@ -62,9 +62,7 @@ func TestEuler3(t *testing.T) {
 		testIn := euler.Euler3(tt[i].test)
 		testExp := tt[i].expt
 
-		if reflect.DeepEqual(testExp, testIn) {
-			t.SkipNow()
-		} else {
+		if goutils.ArrayEqual(testIn, testExp) == false {
 			t.Error("Euler 3 failed")
 		}
 	}
@@ -150,6 +148,27 @@ func TestEuler7(t *testing.T) {
 
 		if testIn != testExp {
 			t.Error("Euler 7 failed")
+		}
+	}
+}
+
+func TestEuler8(t *testing.T) {
+	type Euler8Test struct {
+		test int // input
+		expt int // expected result
+	}
+
+	var tt = []Euler8Test{
+		{4, 5832},
+		{13, 23514624000},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := euler.Euler8(tt[i].test)
+		testExp := tt[i].expt
+
+		if testIn != testExp {
+			t.Error("Euler 8 failed")
 		}
 	}
 }
