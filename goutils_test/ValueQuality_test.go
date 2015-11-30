@@ -2,6 +2,7 @@ package testgoutils
 
 import (
 	"GoProjectEuler/goutils"
+	"strconv"
 	"testing"
 )
 
@@ -74,6 +75,31 @@ func TestIsPalindrome(t *testing.T) {
 
 		if testIn != testExp {
 			t.Error("IsPalindrome test failed")
+		}
+	}
+}
+
+// TestIsPalindrome tests IsPalindrome
+func TestIsEuclidianTriad(t *testing.T) {
+	type IsEuclidianTriadTest struct {
+		a    int
+		b    int
+		c    int
+		expt bool
+	}
+
+	var tt = []IsEuclidianTriadTest{
+		{1, 2, 3, true},
+		{3, 2, 1, false},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := goutils.IsEuclidianTriad(tt[i].a, tt[i].b, tt[i].c)
+		testExp := tt[i].expt
+
+		if testIn != testExp {
+			t.Error("IsEuclidianTriad test failed")
+			t.Log("example " + strconv.Itoa(i+1))
 		}
 	}
 }

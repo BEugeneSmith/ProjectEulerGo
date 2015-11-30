@@ -172,3 +172,24 @@ func TestEuler8(t *testing.T) {
 		}
 	}
 }
+
+func TestEuler9(t *testing.T) {
+	type Euler9Test struct {
+		test int    // input
+		expt string // expected result
+	}
+
+	var tt = []Euler9Test{
+		{12, "3,4,5"},
+		{100, "32,33,35"},
+	}
+
+	for i := 0; i < len(tt); i++ {
+		testIn := euler.Euler9(tt[i].test)
+		testExp := tt[i].expt
+
+		if testIn != testExp {
+			t.Error("Euler 9 failed")
+		}
+	}
+}

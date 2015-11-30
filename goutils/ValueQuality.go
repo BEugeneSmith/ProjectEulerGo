@@ -37,3 +37,11 @@ func IsPalindrome(s string) bool {
 	}
 	return false
 }
+
+// IsEuclidianTriad tests whether a given ordered trio of numbers is a Euclidian triad
+func IsEuclidianTriad(a, b, c int) bool {
+	if a < b && b < c {
+		return true
+	}
+	return false
+}
