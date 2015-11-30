@@ -1,10 +1,27 @@
 package euler
 
 import (
+	"GoProjectEuler/goutils"
 	"log"
 	"strconv"
 	"strings"
 )
+
+// Euler6 solution
+func Euler6(p int) int {
+	sumSquare := goutils.SumSquare(p)
+	squareSum := goutils.SquareSum(p)
+
+	squareDiff := squareSum - sumSquare
+	return squareDiff
+}
+
+// Euler7 solution
+func Euler7(p int) int {
+	primes := goutils.PrimeNumber(p)
+
+	return primes[len(primes)-1]
+}
 
 // Euler8 solution
 func Euler8(size int) int {
@@ -33,4 +50,25 @@ func Euler8(size int) int {
 		}
 	}
 	return max
+}
+
+// Euler9 solution
+func Euler9(n int) string {
+	var allstrings []string
+
+	for i := 1; i < n; i++ {
+		for j := 2; j < n; j++ {
+			for k := 3; k < n; k++ {
+				if (i + j + k) == n {
+					if goutils.IsEuclidianTriad(i, j, k) {
+
+						var strSlice = []string{strconv.Itoa(i), strconv.Itoa(j), strconv.Itoa(k)}
+						str := strings.Join(strSlice, ",")
+						allstrings = append(allstrings, str)
+					}
+				}
+			}
+		}
+	}
+	return allstrings[len(allstrings)-1]
 }
