@@ -33,12 +33,7 @@ func TestIsDiv(t *testing.T) {
 
 // TestIsPrime tests the IsPrime function
 func TestIsPrime(t *testing.T) {
-	type IsPrimeTest struct {
-		test int  // input
-		expt bool // expected result
-	}
-
-	var tt = []IsPrimeTest{
+	var tt = []goutils.TTIB{
 		{2, true},
 		{5, true},
 		{4, false},
@@ -46,8 +41,8 @@ func TestIsPrime(t *testing.T) {
 	}
 
 	for i := 0; i < len(tt); i++ {
-		testIn := goutils.IsPrime(tt[i].test)
-		testExp := tt[i].expt
+		testIn := goutils.IsPrime(tt[i].Test)
+		testExp := tt[i].Expt
 
 		if testExp != testIn {
 			t.Error("IsPrime test failed")
@@ -57,12 +52,7 @@ func TestIsPrime(t *testing.T) {
 
 // TestIsPalindrome tests IsPalindrome
 func TestIsPalindrome(t *testing.T) {
-	type IsPalindromeTest struct {
-		test string
-		expt bool
-	}
-
-	var tt = []IsPalindromeTest{
+	var tt = []goutils.TTSB{
 		{"me", false},
 		{"bob", true},
 		{"90", false},
@@ -70,8 +60,8 @@ func TestIsPalindrome(t *testing.T) {
 	}
 
 	for i := 0; i < len(tt); i++ {
-		testIn := goutils.IsPalindrome(tt[i].test)
-		testExp := tt[i].expt
+		testIn := goutils.IsPalindrome(tt[i].Test)
+		testExp := tt[i].Expt
 
 		if testIn != testExp {
 			t.Error("IsPalindrome test failed")

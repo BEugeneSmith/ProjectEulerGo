@@ -20,7 +20,7 @@ func IsPrime(n int) bool {
 	} else if IsDiv(n, 2) {
 		return false
 	}
-	for i := 3; i < int(n); i += 2 {
+	for i := 3; i < n; i += 2 {
 		if IsDiv(n, i) {
 			return false
 		}

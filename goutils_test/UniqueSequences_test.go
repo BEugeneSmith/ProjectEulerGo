@@ -7,18 +7,13 @@ import (
 
 // TestGetFactors tests the GetFactors
 func TestGetFactors(t *testing.T) {
-	type FactorsTest struct {
-		test int   // input
-		expt []int // expected result
-	}
-
-	var tt = []FactorsTest{
+	var tt = []goutils.TTIA{
 		{10, []int{2, 5}},
 	}
 
 	for i := 0; i < len(tt); i++ {
-		testIn := goutils.GetFactors(tt[i].test)
-		testExp := tt[i].expt
+		testIn := goutils.GetFactors(tt[i].Test)
+		testExp := tt[i].Expt
 
 		if goutils.ArrayEqual(testExp, testIn) {
 			t.SkipNow()
@@ -30,18 +25,13 @@ func TestGetFactors(t *testing.T) {
 
 // TestInitFilteredList tests InitFilteredList
 func TestInitFilteredList(t *testing.T) {
-	type InitFilteredListTest struct {
-		test int   // input
-		expt []int // expected result
-	}
-
-	var tt = []InitFilteredListTest{
+	var tt = []goutils.TTIA{
 		{6, []int{6, 12, 18, 24, 30, 36, 42, 48, 54, 60}},
 	}
 
 	for i := 0; i < len(tt); i++ {
-		testIn := goutils.InitFilteredList(tt[i].test)
-		testExp := tt[i].expt
+		testIn := goutils.InitFilteredList(tt[i].Test)
+		testExp := tt[i].Expt
 
 		if goutils.ArrayEqual(testExp, testIn) {
 			t.SkipNow()
@@ -53,18 +43,13 @@ func TestInitFilteredList(t *testing.T) {
 
 // TestInitFilteredList tests InitFilteredList
 func TestFilterList(t *testing.T) {
-	type FilterListTest struct {
-		test int   // input
-		expt []int // expected result
-	}
-
-	var tt = []FilterListTest{
+	var tt = []goutils.TTIA{
 		{6, []int{60}},
 	}
 
 	for i := 0; i < len(tt); i++ {
-		testIn := goutils.FilterList(tt[i].test)
-		testExp := tt[i].expt
+		testIn := goutils.FilterList(tt[i].Test)
+		testExp := tt[i].Expt
 
 		if goutils.ArrayEqual(testExp, testIn) {
 			t.SkipNow()

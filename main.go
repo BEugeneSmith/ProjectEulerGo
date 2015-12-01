@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -9,41 +10,51 @@ import (
 	"GoProjectEuler/euler"
 )
 
-func main() {
+var num string
+var arg int
 
-	name := os.Args[1]
-	arg, err := strconv.Atoi(os.Args[2])
+func init() {
+	flag.StringVar(&num, "num", os.Args[1], "number")
+
+	i, err := strconv.Atoi(os.Args[2])
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	RoutesFive(name, arg)
+	flag.IntVar(&arg, "arg", i, "argument")
+}
+
+func main() {
+
+	Routes(num, arg)
 
 }
 
-// RoutesFive returns a function
-func RoutesFive(s string, i int) {
+// Routes returns a function
+func Routes(s string, i int) {
 	switch s {
-	case "euler1":
+	case "1":
 		fmt.Println(euler.Euler1(i))
-	case "euler2":
+	case "2":
 		fmt.Println(euler.Euler2(i))
-	case "euler3":
+	case "3":
 		fmt.Println(euler.Euler3(i))
-	case "euler4":
+	case "4":
 		fmt.Println(euler.Euler4(i))
-	case "euler5":
+	case "5":
 		fmt.Println(euler.Euler5(i))
-	case "euler6":
+	case "6":
 		fmt.Println(euler.Euler6(i))
-	case "euler7":
+	case "7":
 		fmt.Println(euler.Euler7(i))
-	case "euler8":
+	case "8":
 		fmt.Println(euler.Euler8(i))
-	case "euler9":
+	case "9":
 		fmt.Println(euler.Euler9(i))
-	case "euler10":
+	case "10":
 		fmt.Println(euler.Euler10(i))
+	default:
+		euler.FizzBuzzPop()
 	}
 }

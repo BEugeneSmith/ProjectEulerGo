@@ -52,7 +52,6 @@ func PrimeLimit(l int) []int {
 			seq = append(seq, i)
 		}
 	}
-
 	return seq[:(len(seq) - 1)]
 }
 
