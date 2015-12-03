@@ -14,6 +14,10 @@ var num string
 var arg int
 
 func init() {
+	if len(os.Args) < 2 {
+		log.Fatal("not enough arguments")
+	}
+
 	flag.StringVar(&num, "num", os.Args[1], "number")
 
 	i, err := strconv.Atoi(os.Args[2])
