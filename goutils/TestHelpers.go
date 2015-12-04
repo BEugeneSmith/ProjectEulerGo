@@ -29,3 +29,9 @@ type TTSB struct {
 	Test string
 	Expt bool
 }
+
+// TTAI is a test table, array to int
+type TTAI struct {
+	Test []int
+	Expt int
+}

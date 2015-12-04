@@ -51,7 +51,7 @@ def traverseMatrixDown(matrix,ns=4):
             for n in range(ns):
                 num = matrix[y+n][x]
                 numset.append(num)
-            
+
             setProd = getProduct(numset)
             if setProd > maxProd[0]:
                 maxProd[0] = setProd
@@ -66,13 +66,13 @@ def traverseMatrixUp(matrix,ns=4):
             for n in range(ns):
                 num = matrix[y-n][x]
                 numset.append(num)
-            
+
             setProd = getProduct(numset)
             if setProd > maxProd[0]:
                 maxProd[0] = setProd
                 maxProd[1] = numset
     return maxProd
-    
+
 def traverseMatrixRight(matrix,ns=4):
     maxProd = [1,[]]
     for y in range(20):
@@ -81,7 +81,7 @@ def traverseMatrixRight(matrix,ns=4):
             for n in range(ns):
                 num = matrix[y][x+n]
                 numset.append(num)
-                        
+
             setProd = getProduct(numset)
             if setProd > maxProd[0]:
                 maxProd[0] = setProd
@@ -96,13 +96,13 @@ def traverseMatrixLeft(matrix,ns=4):
             for n in range(ns):
                 num = matrix[y][x-n]
                 numset.append(num)
-            
+
             setProd = getProduct(numset)
             if setProd > maxProd[0]:
                 maxProd[0] = setProd
                 maxProd[1] = numset
     return maxProd
-    
+
 
 
 print traverseMatrixLeft(m)
@@ -110,4 +110,3 @@ print traverseMatrixRight(m)
 print traverseMatrixUp(m)
 print traverseMatrixDown(m)
 print traverseMatrixDiagonal(m)
-

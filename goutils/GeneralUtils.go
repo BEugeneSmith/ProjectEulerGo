@@ -13,3 +13,12 @@ func ArrayEqual(l1, l2 []int) bool {
 	}
 	return true
 }
+
+// GetProduct returns the product of a int slice
+func GetProduct(l []int) int {
+	prod := 1
+	for i := 0; i < len(l); i++ {
+		prod *= l[i]
+	}
+	return prod
+}
