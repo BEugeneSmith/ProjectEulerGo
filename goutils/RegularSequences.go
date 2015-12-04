@@ -73,3 +73,27 @@ func SquareSum(n int) int {
 	}
 	return int(math.Pow(float64(sum), 2))
 }
+
+// TriangleNumber returns a triangle sequence up to the lth element
+// TODO: Needs to be tested
+func TriangleNumber(l int) []int {
+	seq := []int{1}
+
+	for i := 1; i <= l; i++ {
+		newIx := seq[(i-1)] + 1 + i
+		seq = append(seq, newIx)
+	}
+	return seq
+}
+
+// TriangleLimit returns a prime sequence up to a limit
+// TODO: Needs to be tested
+func TriangleLimit(l int) []int {
+	seq := []int{1}
+
+	for i := 1; seq[len(seq)-1] <= l; i++ {
+		newIx := seq[(i-1)] + 1 + i
+		seq = append(seq, newIx)
+	}
+	return seq
+}

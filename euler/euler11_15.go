@@ -112,3 +112,18 @@ func Euler11() {
 		fmt.Println(dirs[key])
 	}
 }
+
+//Euler12 is the solution to 12
+func Euler12(l int) int {
+	nums := goutils.TriangleNumber(l)
+	for i := 0; i < len(nums); i++ {
+		if !goutils.IsPrime(nums[i]) {
+			factors := goutils.GetFactors(nums[i])
+			if len(factors) == 499 {
+				return nums[i]
+			}
+		}
+	}
+	return 0
+
+}

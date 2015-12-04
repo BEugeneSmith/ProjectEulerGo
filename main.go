@@ -60,6 +60,8 @@ func Routes(s string, i int) {
 		fmt.Println(euler.Euler10(i))
 	case "11":
 		euler.Euler11()
+	case "12":
+		fmt.Println(euler.Euler12(i))
 	default:
 		euler.FizzBuzzPop()
 	}
