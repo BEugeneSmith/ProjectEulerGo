@@ -1,4 +1,4 @@
-GoProjectEuler
+:bulb: GoProjectEuler :bulb:
 ---------------
 Getting friendly with Go via Project Euler.
 
